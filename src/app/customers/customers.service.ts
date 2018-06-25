@@ -13,7 +13,6 @@ export class CustomersService {
   //* SET UP AQS API 
   private username: string = "kendy92";
   private apiToken: string = "XpC0kCA4UpG0EII5VmJOCVlhWT1BV5zFQjvAXC7oRJlgti3GWxm821s3M79qLQmkcacpZ6fsmDQeX3ugtcEpaMPHG3D5gMbhVdGelytHw7FVLR5gTu4vcx2toekpgzTo";
-  private rowId: number = null;
   private table: string = "customers";
   private apiUrl = "https://aqsmalhotra.com/aqs-api/apis/request-data.php?username=" + this.username + "&access_token=" + this.apiToken + "&table=" + this.table;
 
@@ -24,8 +23,8 @@ export class CustomersService {
     );
   }
 
-  getCustomerById(id:number): Observable<Customer> { //* Request customer details base on ID from API
-    return this.http.get<Customer>(this.apiUrl + "&row_id=" + this.rowId)
+  getCustomerById(rowId:number): Observable<Customer> { //* Request customer details base on ID from API
+    return this.http.get<Customer>(this.apiUrl + "&row_id=" + rowId)
     .pipe(
       catchError(this.handleError)
     );
