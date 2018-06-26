@@ -3,6 +3,7 @@
   <div class="search-block">
     <label class="sr-only" for="search_id">Search By Id</label>
     <input [(ngModel)]="searchId" class="form-control" name="search_id" id="search_id" placeholder="Enter customer id..."/>
+    <button (click)="onSearch()" class="btn-search"><ion-icon name="search"></ion-icon></button>
   </div>
   <br>
   <table class="table table-dark">
@@ -24,7 +25,7 @@
           <ng-template #elseMemberInActive>
             <td><span class="badge badge-danger">Inactive</span></td>
           </ng-template>
-          <td><a class="btn btn-info" href="customer_details/{{ c.id }}">Full details</a></td>
+          <td><a class="btn btn-info" href="customers/info/{{ c.id }}">Full details</a></td>
         </tr>
     </tbody>
   </table>

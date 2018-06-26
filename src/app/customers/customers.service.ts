@@ -14,7 +14,7 @@ export class CustomersService {
   private username: string = "kendy92";
   private apiToken: string = "XpC0kCA4UpG0EII5VmJOCVlhWT1BV5zFQjvAXC7oRJlgti3GWxm821s3M79qLQmkcacpZ6fsmDQeX3ugtcEpaMPHG3D5gMbhVdGelytHw7FVLR5gTu4vcx2toekpgzTo";
   private table: string = "customers";
-  private apiUrl = "https://aqsmalhotra.com/aqs-api/apis/request-data.php?username=" + this.username + "&access_token=" + this.apiToken + "&table=" + this.table;
+  private apiUrl: string = "https://aqsmalhotra.com/aqs-api/apis/request-data.php?username=" + this.username + "&access_token=" + this.apiToken + "&table=" + this.table;
 
   getCustomers(): Observable<Customer[]> { //* Request all customers from API
     return this.http.get<Customer[]>(this.apiUrl)
@@ -23,8 +23,8 @@ export class CustomersService {
     );
   }
 
-  getCustomerById(rowId:number): Observable<Customer> { //* Request customer details base on ID from API
-    return this.http.get<Customer>(this.apiUrl + "&row_id=" + rowId)
+  getCustomerById(rowId?:number): Observable<Customer[]> { //* Request customer details base on ID from API
+    return this.http.get<Customer[]>(this.apiUrl + "&row_id=" + rowId)
     .pipe(
       catchError(this.handleError)
     );

@@ -19,7 +19,15 @@ export class CustomersComponent implements OnInit {
   }
   //* function to return customer based on ID from service
   getCustomerById() {
-    this.customerService.getCustomerById(this.searchId).subscribe(data => this.customer = data);
+    this.customerService.getCustomerById(this.searchId).subscribe(data => this.customers = data);
+  }
+
+  onSearch() {
+    if(this.searchId === null) {
+      this.getCustomers();
+    }else{
+      this.getCustomerById();
+    }
   }
 
   constructor(

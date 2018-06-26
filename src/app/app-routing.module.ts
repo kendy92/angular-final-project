@@ -3,12 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 //* import components to route
+import { HomeComponent } from './home/home.component';
 import { CustomersComponent } from './customers/customers.component';
+import { ClientInfoComponent } from './client-info/client-info.component';
 
 
 //* init route array
 const routes: Routes = [
-  { path: 'customers', component: CustomersComponent }
+  { path: '', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'customers', component: CustomersComponent },
+  { path: 'customers/info/:id', component: ClientInfoComponent}
 ]
 
 @NgModule({

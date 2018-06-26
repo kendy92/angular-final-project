@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Customer Details</h1>
+  <div *ngIf="customers; else noDataFound" class="jumbotron">
+    <ul *ngFor="let c of customers">
+      <li><strong>First name:</strong> {{ c.first_name }}</li>
+      <li><strong>Last name:</strong> {{ c.last_name }}</li>
+      <li><strong>Date of Birth:</strong> {{ c.dob }}</li>
+      <li><strong>Seller Type:</strong> {{ c.seller_type }}</li>
+      <li><strong>Email:</strong> {{ c.contact_email }}</li>
+      <li><strong>Phone:</strong> {{ c.contact_phone }}</li>
+      <li><strong>Address:</strong> {{ c.client_address }}</li>
+      <li><strong>Account status: </strong><span *ngIf="c.member_status == 1; else elseMemberInActive">Active</span></li>
+      <ng-template #elseMemberInActive>Inactive</ng-template>
+    </ul>
+  </div>
+  <ng-template #noDataFound><p>No Data found!</p></ng-template>
+  <button (click)="goBack()" class="btn btn-secondary">Go Back</button>
+</div>
