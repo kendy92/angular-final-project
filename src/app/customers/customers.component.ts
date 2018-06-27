@@ -10,7 +10,6 @@ import { CustomersService } from './customers.service';
 export class CustomersComponent implements OnInit {
 
   public customers: Customer[] = []; //* init empty customer array class
-  public customer = new Customer(); //* init a new customer class
   public searchId: number = null;//* init search id property
 
   //* function to return all customers from service
@@ -23,11 +22,7 @@ export class CustomersComponent implements OnInit {
   }
 
   onSearch() {
-    if(this.searchId === null) {
-      this.getCustomers();
-    }else{
-      this.getCustomerById();
-    }
+    this.searchId === null ? this.getCustomers() : this.getCustomerById();
   }
 
   constructor(
