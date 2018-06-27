@@ -10,6 +10,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ClientInfoComponent } from './client-info/client-info.component';
 import { CarsComponent } from './cars/cars.component';
+import { CarInfoComponent } from './car-info/car-info.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CarsComponent } from './cars/cars.component';
     CustomersComponent,
     HomeComponent,
     ClientInfoComponent,
-    CarsComponent
+    CarsComponent,
+    CarInfoComponent
   ],
   imports: [
     BrowserModule,

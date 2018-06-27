@@ -1,0 +1,13 @@
+.search-block {
+    position:relative;
+}
+
+.btn-search {
+    border: none;
+    background-color: transparent;
+    font-size: 2em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}

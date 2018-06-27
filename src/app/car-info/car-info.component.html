@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Car Details</h1>
+    <div *ngIf="cars; else noDataFound" class="jumbotron">
+      <ul *ngFor="let c of cars">
+        <li><strong>Car ID:</strong> {{ c.id }}</li>
+        <li><strong>Type:</strong> {{ c.type }}</li>
+        <li><strong> Make:</strong> {{ c.make }}</li>
+        <li><strong>Model:</strong> {{ c.model }}</li>
+        <li><strong>Year:</strong> {{ c.year }}</li>
+        <li><strong>Transmission:</strong> {{ c.transmission_type }}</li>
+        <li><strong>Price:</strong> {{ c.price }}</li>
+        <li><strong>Fuel type:</strong> {{ c.fuel_type }}</li>
+        <li><strong>Kilometres:</strong> {{ c.kilometres }}</li>
+        <li><strong>Vehicle status:</strong> {{ c.vehicle_status }}</li>
+        <li><strong>Car proof: </strong><span *ngIf="c.has_carproof == 1; else elseMemberInActive">Yes</span></li>
+        <ng-template #elseMemberInActive>No</ng-template>
+        <li><strong>Posted date:</strong> {{ c.date_posted }}</li>
+      </ul>
+    </div>
+    <ng-template #noDataFound><p>No Data found!</p></ng-template>
+    <button (click)="goBack()" class="btn btn-secondary">Go Back</button>
+  </div>
