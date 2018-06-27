@@ -1,4 +1,4 @@
-<div *ngIf="customers; else noDataFound" class="container">
+<div *ngIf="cars; else noDataFound" class="container">
   <h1>CAR MANAGEMENT PAGE</h1>
   <div class="search-block">
     <label class="sr-only" for="search_id">Search By ID</label>
@@ -28,7 +28,9 @@
   </table>
 </div>
 <ng-template #noDataFound>
-  <div class="jumpbotron">
-    No content found!
-  </div>
+  <div class="container">
+      <div class="jumpbotron">
+          No content found!
+        </div>
+    </div>
 </ng-template>

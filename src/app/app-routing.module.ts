@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CustomersComponent } from './customers/customers.component';
 import { ClientInfoComponent } from './client-info/client-info.component';
+import { CarsComponent } from './cars/cars.component';
 
 
 //* init route array
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
   { path: 'customers', component: CustomersComponent },
-  { path: 'customers/info/:id', component: ClientInfoComponent}
+  { path: 'customers/info/:id', component: ClientInfoComponent},
+  { path: 'cars', component: CarsComponent }
 ]
 
 @NgModule({
