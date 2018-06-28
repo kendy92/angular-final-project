@@ -1,0 +1,18 @@
+.highlight::before{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    margin: .5em;
+    background-color: hsla(0,10%,10%,.5);
+}
+
+.highlight{
+    display: block;
+    font-weight: 600;
+}
+
+.info-box {
+    list-style-type: none;
+    padding:0;
+}

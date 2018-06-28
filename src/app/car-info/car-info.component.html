@@ -3,13 +3,13 @@
     <div *ngIf="cars; else noDataFound">
       
         <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-              <img src="assets/car.png" class="img-fluid animated infinite pulse car-avatar" alt="car info" />
+          <div class="col-lg-6 col-md-6 col-sm-12 text-center" style="display: flex;align-items: center;justify-content: center; margin-bottom:.5em;">
+              <img src="assets/car.png" class="img-fluid animated infinite pulse" style="width:300px;" alt="car info" />
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12">
               <ul *ngFor="let c of cars" class="info-box">
                   <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center">
                      <li><span class="highlight" class="highlight">Car ID</span> {{ c.id }}</li>
                      <li><span class="highlight">Type</span> {{ c.type }}</li>
                      <li><span class="highlight">Make</span> {{ c.make }}</li>
@@ -17,13 +17,13 @@
                      <li><span class="highlight">Year</span> {{ c.year }}</li>
                      <li><span class="highlight">Transmission</span> {{ c.transmission_type }}</li>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6 text-center">
                      <li><span class="highlight">Price</span> {{ c.price }}</li>
                      <li><span class="highlight">Fuel type</span> {{ c.fuel_type }}</li>
                      <li><span class="highlight">Kilometres</span> {{ c.kilometres }}</li>
                      <li><span class="highlight">Vehicle status</span> {{ c.vehicle_status }}</li>
-                     <li><span class="highlight">Car Proof </span><span class="highlight" *ngIf="c.has_carproof == 1; else elseMemberInActive">Yes</span></li>
-                     <ng-template #elseMemberInActive>No</ng-template>
+                     <li><span class="highlight">Vehicle report </span><span *ngIf="c.has_carproof == 1; else elseMemberInActive"><img src="assets/carproof.png" class="img-fluid" style="width:100px" alt="carproof image"/></span></li>
+                     <ng-template #elseMemberInActive>Not available</ng-template>
                      <li><span class="highlight">Posted Date</span> {{ c.date_posted }}</li>
                     </div>
                     </div>
@@ -32,7 +32,7 @@
         </div>
     </div>
     <ng-template #noDataFound><p>No Data found!</p></ng-template>
-    <div class="text-center">
+    <div>
       <button (click)="goBack()" class="btn btn-secondary">Go Back</button>
     </div>
   </div>

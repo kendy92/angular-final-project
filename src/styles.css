@@ -17,3 +17,15 @@ h1 {
     font-size: 1.75em;
     padding: 10px 5px;
 }
+
+.api-table {
+    background-color: #ddd;
+}
+
+main{
+    min-height:500px;
+}
+
+footer{
+    margin-top:1em;
+}
