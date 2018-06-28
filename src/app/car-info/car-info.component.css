@@ -1,0 +1,17 @@
+.highlight::before{
+    display: block;
+    content: "";
+    width: 50%;
+    height: 1px;
+    margin: 0 0 8px;
+    background-color: hsla(0,10%,10%,.5);
+}
+
+.highlight{
+    display: block;
+    font-weight: 600;
+}
+
+.info-box {
+    list-style-type: none;
+}
