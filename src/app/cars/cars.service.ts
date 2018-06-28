@@ -10,8 +10,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class CarsService {
 
   /* SET UP STARK API */
-  private apiKey: string = "26EA119221E43394DDCED523590FE052";
-  private accessToken: string = "VamLfnwJewwTcnPpFDJ57BV5lwxZyfmsN9KlvOjFF1wxbrwrbXI2xkrYykCedQ1ys1PQtziM0lO4g8Eu3BGxJDtcHxY7k4gY1sujLrNn7hVH5S1Bc9ugRDt6kwKHKvBL";
+  private apiKey: string = "CF89A7237DE76C8F8C0F26D6C26AB063";
+  private accessToken: string = "wyPBghY5XDpfPjYv3og5gUr6zfdAPMOCBm1gO9MDboRMQkYlUboVc3edxeMSAhExTzl05uW095u80HIaj8HZ24uTOQz8qL9b8ZMkmxNH4diVyuJQfjfYoteNMyZ0flfN";
   private comp: string = "cars";
   private apiUrl: string = "http://stark-app.lilcasoft.info/apis/request-data.php?api_key="+ this.apiKey +"&access_token=" + this.accessToken + "&comp="+ this.comp;
 

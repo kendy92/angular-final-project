@@ -2,6 +2,14 @@
     <h1>Car Details</h1>
     <div *ngIf="cars; else noDataFound" class="jumbotron">
       <ul *ngFor="let c of cars">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+
+          </div>
+        </div>
         <li><strong>Car ID:</strong> {{ c.id }}</li>
         <li><strong>Type:</strong> {{ c.type }}</li>
         <li><strong> Make:</strong> {{ c.make }}</li>
