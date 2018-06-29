@@ -22,6 +22,7 @@ export class CarsComponent implements OnInit {
 
   onSearch() {
     if(this.key === null) {
+      alert('Please enter car id to search!');
       this.getAllCars();
     }else{
       this.getCarByKey();

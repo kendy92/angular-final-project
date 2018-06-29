@@ -1,34 +1,41 @@
 <div *ngIf="customers; else noDataFound" class="container">
   <h1>CUSTOMER MANAGEMENT PAGE</h1>
-  <div class="search-block">
-    <label class="sr-only" for="search_id">Search By Id</label>
-    <input [(ngModel)]="searchId" class="form-control" name="search_id" id="search_id" placeholder="Enter customer id..."/>
-    <button (click)="onSearch()" class="btn-search"><ion-icon name="search"></ion-icon></button>
-  </div>
-  <br>
-  <table class="table table-striped api-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Full name</th>
-        <th class="d-none d-md-block">Type</th>
-        <th>Account status</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let c of customers">
-          <td>{{ c.id }}</td>
-          <td>{{ c.first_name }} {{ c.last_name }}</td>
-          <td class="d-none d-md-block">{{ c.seller_type }}</td>
-          <td *ngIf="c.member_status == 1; else elseMemberInActive"><span class="badge badge-success">Active</span></td>
-          <ng-template #elseMemberInActive>
-            <td><span class="badge badge-danger">Inactive</span></td>
-          </ng-template>
-          <td><a class="btn btn-info" href="customers/info/{{ c.id }}">Full details</a></td>
+
+  <div *ngIf="!errMsg; else loadErr">
+    <div class="search-block">
+      <label class="sr-only" for="search_id">Search By Id</label>
+      <input [(ngModel)]="searchId" class="form-control" name="search_id" id="search_id" placeholder="Enter customer id..."/>
+      <button (click)="onSearch()" class="btn-search"><ion-icon name="search"></ion-icon></button>
+    </div>
+    <br>
+    <table class="table table-striped api-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Full name</th>
+          <th class="d-none d-md-block">Type</th>
+          <th>Account status</th>
+          <th></th>
         </tr>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+          <tr *ngFor="let c of customers">
+            <td>{{ c.id }}</td>
+            <td>{{ c.first_name }} {{ c.last_name }}</td>
+            <td class="d-none d-md-block">{{ c.seller_type }}</td>
+            <td *ngIf="c.member_status == 1; else elseMemberInActive"><span class="badge badge-success">Active</span></td>
+            <ng-template #elseMemberInActive>
+              <td><span class="badge badge-danger">Inactive</span></td>
+            </ng-template>
+            <td><a class="btn btn-info" href="customers/info/{{ c.id }}">Full details</a></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #loadErr>
+    <div class="alert alert-danger" role="alert">{{ errMsg }}</div>
+    <button (click)="reLoad()" class="btn btn-secondary">Go Back</button>
+  </ng-template>
 </div>
 <ng-template #noDataFound>
   <div class="jumpbotron">

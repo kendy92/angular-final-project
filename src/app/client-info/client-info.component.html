@@ -1,32 +1,38 @@
 <div class="container">
   <h1>Customer Details</h1>
-  <div *ngIf="customers; else noDataFound" class="jumbotron">
-    <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 text-center" style="display: flex;align-items: center;justify-content: center; margin-bottom:.5em;">
-          <img src="assets/empty-profile.png" class="img-fluid animated infinite pulse" style="width: 300px;" alt="profile picture" />
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-          <ul *ngFor="let c of customers" class="info-box">
-              <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 text-center">
-                 <li><span class="highlight" class="highlight">Customer ID</span> {{ c.id }}</li>
-                 <li><span class="highlight">First name</span> {{ c.first_name }}</li>
-                 <li><span class="highlight">Last Name</span> {{ c.last_name }}</li>
-                 <li><span class="highlight">Date of birth</span> {{ c.dob }}</li>
-                 <li><span class="highlight">Seller type</span> {{ c.seller_type }}</li>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 text-center">
-                 <li><span class="highlight">Email</span> {{ c.contact_email }}</li>
-                 <li><span class="highlight">Phone</span> {{ c.contact_phone }}</li>
-                 <li><span class="highlight">Address</span> {{ c.client_address }}</li>
-                 <li><span class="highlight">Account status </span><span class="badge badge-success" *ngIf="c.member_status == 1; else elseMemberInActive">active</span></li>
-                 <ng-template #elseMemberInActive><span class="badge badge-danger">inactive</span></ng-template>
-                </div>
-                </div>
-            </ul>
-      </div>
-    </div>
+
+  <div *ngIf="!errMsg; else loadErr">
+      <div *ngIf="customers; else noDataFound" class="jumbotron">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 text-center" style="display: flex;align-items: center;justify-content: center; margin-bottom:.5em;">
+                <img src="assets/empty-profile.png" class="img-fluid animated infinite pulse" style="width: 300px;" alt="profile picture" />
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <ul *ngFor="let c of customers" class="info-box">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+                       <li><span class="highlight" class="highlight">Customer ID</span> {{ c.id }}</li>
+                       <li><span class="highlight">First name</span> {{ c.first_name }}</li>
+                       <li><span class="highlight">Last Name</span> {{ c.last_name }}</li>
+                       <li><span class="highlight">Date of birth</span> {{ c.dob }}</li>
+                       <li><span class="highlight">Seller type</span> {{ c.seller_type }}</li>
+                      </div>
+                      <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+                       <li><span class="highlight">Email</span> {{ c.contact_email }}</li>
+                       <li><span class="highlight">Phone</span> {{ c.contact_phone }}</li>
+                       <li><span class="highlight">Address</span> {{ c.client_address }}</li>
+                       <li><span class="highlight">Account status </span><span class="badge badge-success" *ngIf="c.member_status == 1; else elseMemberInActive">active</span></li>
+                       <ng-template #elseMemberInActive><span class="badge badge-danger">inactive</span></ng-template>
+                      </div>
+                      </div>
+                  </ul>
+            </div>
+          </div>
+        </div>
+        <ng-template #noDataFound><p>No Data found!</p></ng-template>
   </div>
-  <ng-template #noDataFound><p>No Data found!</p></ng-template>
-  <button (click)="goBack()" class="btn btn-secondary">Go Back</button>
+  <ng-template #loadErr>
+      <div class="alert alert-danger" role="alert">{{ errMsg }}</div>
+    </ng-template>
+    <button (click)="goBack()" class="btn btn-secondary">Go Back</button>
 </div>

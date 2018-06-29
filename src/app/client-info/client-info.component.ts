@@ -10,15 +10,16 @@ import { Customer } from '../customers/customer';
   styleUrls: ['./client-info.component.css']
 })
 export class ClientInfoComponent implements OnInit {
-  num: number;
-  customers: Customer[] = [];
+  public num: number;
+  public customers: Customer[] = [];
+  public errMsg: string = "";
 
   getNum(): void {
     this.num = +this.route.snapshot.paramMap.get('id');
   }
 
   getCustomerDetails() {
-    this.customerService.getCustomerById(this.num).subscribe(data => this.customers = data);
+    this.customerService.getCustomerById(this.num).subscribe(data => this.customers = data, error => this.errMsg = error);
   }
 
   goBack(): void {

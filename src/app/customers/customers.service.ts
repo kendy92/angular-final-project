@@ -37,7 +37,7 @@ export class CustomersService {
     } else {
       console.error(`Backend returned code ${error.status}, message was: ${error.statusText}`);
     }
-    return throwError ('Something very bad happened!');
+    return throwError (error.statusText);
   }
 
   constructor(
