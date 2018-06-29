@@ -10,10 +10,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class CarsService {
 
   /* SET UP STARK API */
-  private apiKey: string = "CF89A7237DE76C8F8C0F26D6C26AB063";
-  private accessToken: string = "wyPBghY5XDpfPjYv3og5gUr6zfdAPMOCBm1gO9MDboRMQkYlUboVc3edxeMSAhExTzl05uW095u80HIaj8HZ24uTOQz8qL9b8ZMkmxNH4diVyuJQfjfYoteNMyZ0flfN";
+  private apiKey: string = "8DF8FD248DDADE1F75970DCD6480E8E2";
+  private accessToken: string = "tCocQSErSg7rop9odYSmErJ3yAyesYGLKQkl8SC59f60LrLE1XuXk9BAISOacraTIgvz9aGGzJaZuABh5iKeVzPxbJkrUpfFgKeuNyb94zKhM71R5dRdLaIqwcswBLdQ";
   private comp: string = "cars";
-  private apiUrl: string = "http://stark-app.lilcasoft.info/apis/request-data.php?api_key="+ this.apiKey +"&access_token=" + this.accessToken + "&comp="+ this.comp;
+  private apiUrl: string = "https://stark-app.lilcasoft.info/apis/request-data.php?api_key="+ this.apiKey +"&access_token=" + this.accessToken + "&comp="+ this.comp;
 
   getCars(): Observable< Car[] > {
     return this.http.get< Car[] >(this.apiUrl)

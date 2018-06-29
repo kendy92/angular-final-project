@@ -11,8 +11,8 @@ export class CustomersService {
   
 
   //* SET UP AQS API 
-  private username: string = "kendy92";
-  private apiToken: string = "XpC0kCA4UpG0EII5VmJOCVlhWT1BV5zFQjvAXC7oRJlgti3GWxm821s3M79qLQmkcacpZ6fsmDQeX3ugtcEpaMPHG3D5gMbhVdGelytHw7FVLR5gTu4vcx2toekpgzTo";
+  private username: string = "kendy900";
+  private apiToken: string = "P0jNLEyrq7BcwUrdjd1R5iGyOywUBIlqIFdukMVKTwXqqoDJBEBHXifLQMFrv1SdH6I1SDMMaJdB8QlJvWrseHe4tUwZVocDuVFnzraJbnkjeF3JCucQbqVFksEgQRTl";
   private table: string = "customers";
   private apiUrl: string = "https://aqsmalhotra.com/aqs-api/apis/request-data.php?username=" + this.username + "&access_token=" + this.apiToken + "&table=" + this.table;
 
